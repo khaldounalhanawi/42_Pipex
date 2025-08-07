@@ -1,37 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kalhanaw <kalhanaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 15:46:06 by kalhanaw          #+#    #+#             */
-/*   Updated: 2025/08/07 14:32:58 by kalhanaw         ###   ########.fr       */
+/*   Created: 2025/05/20 15:39:32 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/08/07 17:43:17 by kalhanaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strdup(const char *s1)
 {
-	size_t	i;
+	char	*p;
+	char	*record;
+	int		len;
 
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
+	len = 0;
+	while (s1[len])
+		len++;
+	p = malloc((len + 1) * (size_t) sizeof(char));
+	if (!p)
+		return (NULL);
+	record = p;
+	while (*s1)
+		*p++ = *s1++;
+	*p = '\0';
+	return (record);
 }
 /*
-#include <stdio.h>
 #include <string.h>
-int 	main()
-{
+#include <stdio.h>
 
-	char k[] = "";
-	printf("my%zu\n", ft_strlen(k));
-	printf("default%zu\n", strlen(k));
+int main()
+{
+	char a[] = {'A','\0','k','\0'};
+	// char a[] = "Khaldoun";
+
+	char *b = ft_strdup(a);
+	char *c = strdup(a);
+
+	printf("my:       %s\n", b);
+	printf("default:  %s\n", c);
+
+	free(b);
+
 	return (0);
 }
 */
