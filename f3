@@ -1,0 +1,26 @@
+total 3328$
+-rw-r--r--   1 khaldouna  staff      669 Aug  7 07:01 _execve.f$
+-rw-r--r--   1 khaldouna  staff      647 Aug  7 07:01 _simple pipe.f$
+drwxr-xr-x@ 25 khaldouna  staff      800 Aug 10 19:26 .$
+drwxr-xr-x   5 khaldouna  staff      160 Aug  7 07:01 ..$
+drwxr-xr-x  14 khaldouna  staff      448 Aug  7 22:33 .git$
+-rwxr-xr-x@  1 khaldouna  staff    34984 Aug 10 19:26 a.out$
+drwxr-xr-x@  3 khaldouna  staff       96 Aug  8 13:35 a.out.dSYM$
+-rw-r--r--   1 khaldouna  staff  1586891 Aug  7 07:01 en.subject.pdf$
+-rw-r--r--   1 khaldouna  staff      136 Aug  7 22:33 f1$
+-rwxr-xr-x@  1 khaldouna  staff        0 Aug 10 19:26 f3$
+-rw-r--r--@  1 khaldouna  staff     1362 Aug 10 19:26 fn_cmd_exe.c$
+-rw-r--r--@  1 khaldouna  staff      644 Aug 10 18:29 fn_extract_envp.c$
+-rw-r--r--   1 khaldouna  staff     2209 Aug  7 22:33 ft_split.c$
+-rw-r--r--   1 khaldouna  staff     1422 Aug  7 22:33 ft_strdup.c$
+-rw-r--r--   1 khaldouna  staff     1450 Aug  7 22:33 ft_strjoin.c$
+-rw-r--r--   1 khaldouna  staff     1501 Aug  7 22:33 ft_strlcpy.c$
+-rw-r--r--   1 khaldouna  staff     1173 Aug  7 22:33 ft_strlen.c$
+-rw-r--r--   1 khaldouna  staff     1644 Aug  7 22:33 ft_strnstr.c$
+-rw-r--r--@  1 khaldouna  staff     1440 Aug 10 19:24 ft_strrchr.c$
+-rw-r--r--   1 khaldouna  staff    11793 Aug  7 07:01 General plan.drawio$
+-rw-r--r--@  1 khaldouna  staff     2026 Aug 10 18:28 main.c$
+-rw-r--r--@  1 khaldouna  staff      608 Aug 10 19:24 pipex.h$
+-rwxr-xr-x   1 khaldouna  staff       12 Aug  7 07:01 result$
+-rw-r--r--   1 khaldouna  staff      516 Aug  7 07:01 target.f$
+-rw-r--r--@  1 khaldouna  staff        0 Aug 10 18:26 temp.c$

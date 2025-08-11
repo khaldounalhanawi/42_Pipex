@@ -17,6 +17,9 @@ char	*ft_strdup(const char *s1);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	**extract_envp(char **envp);
 char	*ft_strjoin(char const *s1, char const *s2);
+int		cmd_exe(char *cmd, char **envp);
+char	*ft_strrchr(const char *s, int c);
+
 
 
 #endif
