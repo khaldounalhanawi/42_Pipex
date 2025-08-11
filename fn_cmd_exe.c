@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fn_cmd_exe.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/11 15:45:52 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/08/11 16:53:10 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
 
 static int	free_mult_arr(char **arr, char **arr2)
@@ -8,15 +20,15 @@ static int	free_mult_arr(char **arr, char **arr2)
 	if (arr)
 	{
 		while (arr[i])
-			free (arr[i++]);
-		free (arr);
+			free(arr[i++]);
+		free(arr);
 	}
 	if (arr2)
 	{
 		i = 0;
 		while (arr2[i])
-			free (arr2[i++]);
-		free (arr2);
+			free(arr2[i++]);
+		free(arr2);
 	}
 	return (-1);
 }
@@ -32,7 +44,7 @@ static char	*merge_name(char *paths, char *name)
 	temp = address;
 	address = NULL;
 	address = ft_strjoin(temp, name);
-	free (temp);
+	free(temp);
 	if (!address)
 		return (NULL);
 	return (address);
@@ -45,18 +57,18 @@ static char	*inspect_paths(char **paths, char *name)
 	address = NULL;
 	while (*paths)
 	{
-		if (ft_strrchr (name, '/'))
+		if (ft_strrchr(name, '/'))
 		{
-			if (access (name, X_OK) == 0)
-				return (ft_strdup (name));
+			if (access(name, X_OK) == 0)
+				return (ft_strdup(name));
 		}
-		address = merge_name (*paths, name);
+		address = merge_name(*paths, name);
 		if (!address)
 			return (NULL);
-		if (access (address, X_OK) == 0)
+		if (access(address, X_OK) == 0)
 			return (address);
-		free (address);
-		paths ++;
+		free(address);
+		paths++;
 	}
 	return (NULL);
 }
@@ -67,21 +79,21 @@ int	cmd_exe(char *cmd, char **envp)
 	char	**paths;
 	char	*address;
 
-	paths = extract_envp (envp);
+	paths = extract_envp(envp);
 	if (!paths)
 		return (-1);
-	arr = ft_split (cmd, ' ');
+	arr = ft_split(cmd, ' ');
 	if (!arr)
 	{
-		free_mult_arr (paths, NULL);
+		free_mult_arr(paths, NULL);
 		return (-2);
 	}
-	address = inspect_paths (paths, arr[0]);
+	address = inspect_paths(paths, arr[0]);
 	if (!address)
-		return (free_mult_arr (arr, paths));
-	if (execve (address, arr, envp) == -1)
+		return (free_mult_arr(arr, paths));
+	if (execve(address, arr, envp) == -1)
 	{
-		free (address);
+		free(address);
 		return (free_mult_arr(arr, paths));
 	}
 	return (0);
